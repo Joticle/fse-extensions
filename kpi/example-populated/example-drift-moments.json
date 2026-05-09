@@ -1,0 +1,50 @@
+{
+  "fse_kpi_schema_version": "1.0",
+  "project": "ExampleProject",
+  "moments": [
+    {
+      "drift_id": "exp-2026-05-03-001",
+      "session": "FeatureExample-A",
+      "timestamp": "2026-05-03T11:30:00Z",
+      "category": "scope_misread",
+      "what_happened": "CLI interpreted 'no further changes needed' on a single section as authorization to skip the broader scope authorization that was the actual locked scope of the session. CLI updated only the narrow item, declared session complete, and prepared validation against an unchanged prior-session state.",
+      "root_cause": "Ambiguous operator phrasing combined with CLI conservative bias toward 'do less rather than invent scope.' CLI did not have the locked scope block in its file system (only in operator chat) so when given limited authorization, defaulted to the smaller interpretation.",
+      "correction_required": "Operator clarified the full scope explicitly with locked content block. CLI rebuilt with complete session prompt.",
+      "session_lost_minutes": 25,
+      "preventable_by": "Specific operator phrasing distinguishing partial approval from session scope authorization. CLI re-confirming session scope before proceeding when receiving partial authorization."
+    },
+    {
+      "drift_id": "exp-2026-05-02-001",
+      "session": "InfraExample-B",
+      "timestamp": "2026-05-02T20:11:00Z",
+      "category": "pattern_divergence",
+      "what_happened": "CLI built a custom credential approach for shared-hosting infrastructure auth, treating the problem as net-new. Multiple other projects in the portfolio already used the canonical approach (default credential chain reading process environment variables) in production.",
+      "root_cause": "CLI did not audit reference patterns from other projects in the portfolio before designing the approach. No standing order required cross-project pattern check before infrastructure decisions.",
+      "correction_required": "Operator surfaced that 7 other portfolio projects worked fine with the canonical pattern. Audit of a reference project revealed the approach. CLI reverted the custom credential, adopted the canonical pattern, committed alignment.",
+      "session_lost_minutes": 45,
+      "preventable_by": "Standing order requiring CLI to check existing portfolio patterns before designing infrastructure approaches. Or explicit prompt directive to align with reference solution."
+    },
+    {
+      "drift_id": "exp-2026-04-28-001",
+      "session": "FoundationExample-C",
+      "timestamp": "2026-04-28T15:00:00Z",
+      "category": "over_engineering",
+      "what_happened": "CLI built a tier-program system with database-enforced atomic immutability, retired-on-churn permanence, and SERIALIZABLE locking — production-grade integrity contract for a marketing program with zero customers. Operator wanted a lighter-weight tier with cleanup-as-you-go capability.",
+      "root_cause": "CLI conflated 'make it real' with 'make it immutable.' When operator said 'tier program,' CLI interpreted as data-integrity contract requiring database-enforced rigor. Operator's actual intent was a marketing badge with operator-controlled lifecycle.",
+      "correction_required": "Held over multiple sessions. Operator explicitly clarified the lifecycle constraints. Subsequent session drafted to add admin cleanup tools and soften the immutability contract.",
+      "session_lost_minutes": 120,
+      "preventable_by": "CLI asking explicitly about lifecycle constraints when designing tier systems. Operator review of architectural decisions section before implementation begins."
+    },
+    {
+      "drift_id": "exp-2026-04-30-001",
+      "session": "FeatureExample-D",
+      "timestamp": "2026-04-30T19:00:00Z",
+      "category": "premature_completion",
+      "what_happened": "CLI declared session complete with marketing surface refresh shipped. Operator walkthrough surfaced an 8-item punchlist including critical bugs (registration step failing with generic error, all four legal pages broken or rendering empty) plus visual polish issues. The next session was almost entirely cleanup.",
+      "root_cause": "CLI did not run end-to-end smoke against the live customer-facing surface before declaring the session shipped. Did not click each footer link. Visual Validation was scoped as 'operator-driven' but CLI did not flag pre-walkthrough quality issues.",
+      "correction_required": "Subsequent session added: registration root-cause fix, legal page rendering, supporting page placeholders, contact form, footer trust line. Plus follow-on polish session for the customer-facing surface.",
+      "session_lost_minutes": 180,
+      "preventable_by": "Standing order requiring CLI to walk the customer-facing surface and confirm core flows work before declaring sessions shipped. Smoke tests on the registration saga gated on integration test runner."
+    }
+  ]
+}

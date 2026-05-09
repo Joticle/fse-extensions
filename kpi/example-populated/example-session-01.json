@@ -1,0 +1,56 @@
+{
+  "fse_kpi_schema_version": "1.0",
+  "project": "ExampleProject",
+  "session": "PolishExample",
+  "date_started": "2026-05-03T14:22:00Z",
+  "date_committed": "2026-05-03T15:11:00Z",
+  "type": "Polish",
+  "is_feature": false,
+  "sha": "abc1234",
+  "scope_summary": "Hero refinement, capability comparison matrix replaces prior section, unified pricing card",
+
+  "complexity": {
+    "pre_session": {
+      "surface_area": 2,
+      "cognitive_depth": 2,
+      "test_scope": 1,
+      "risk_surface": 1,
+      "spec_ambiguity": 2,
+      "total": 8,
+      "bracket": "Moderate"
+    },
+    "post_session": {
+      "surface_area": 2,
+      "cognitive_depth": 2,
+      "test_scope": 1,
+      "risk_surface": 1,
+      "spec_ambiguity": 2,
+      "total": 8,
+      "bracket": "Moderate"
+    },
+    "estimation_drift": 0
+  },
+
+  "metrics": {
+    "files_modified": 8,
+    "loc_added": 412,
+    "loc_removed": 156,
+    "test_count_before": 130,
+    "test_count_after": 132,
+    "test_delta": 2,
+    "build_state": "0/0",
+    "claude_compute_seconds": 612,
+    "operator_estimated_traditional_hours": 6,
+    "actual_claude_powered_minutes": 49
+  },
+
+  "outcomes": {
+    "hitl_phases": [],
+    "deviations_documented": 6,
+    "outcome": "clean",
+    "drift_session": false,
+    "operator_satisfied": true
+  },
+
+  "drift_moments": []
+}

@@ -32,6 +32,16 @@ A stack folder is "complete" when all four files exist and have been validated a
 
 .NET is first because the creator has worked with it for 25 years and it's the stack everything was originally pressure-tested in. That is the entire reason. There is no deeper architectural meaning to the ordering. The other nine are listed in roughly the order they tend to come up in the kind of projects FSE was built for.
 
+## Methodology Extensions
+
+Stack extensions cover language-specific patterns. Methodology extensions cover cross-cutting practices that any stack can adopt.
+
+| Extension | Purpose |
+|---|---|
+| [kpi](./kpi) | Methodology extension for session-level metrics tracking. Five-dimension complexity scoring, JSON schemas for sessions and drift moments, FCI/AAF/DR/Net AAF aggregates. Opt-in. |
+
+Methodology extensions are opt-in. Adopting one is a per-project decision, recorded in the project's `FSE_STATE.md` adoption block.
+
 ## How to contribute a new stack
 
 Pick an open stack. Read the root `CONTRIBUTING.md`. Match the structure and quality bar of the dotnet folder. Submit a pull request.
